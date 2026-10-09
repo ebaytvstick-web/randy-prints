@@ -109,4 +109,15 @@ const PRODUCTS = [
     status: "in-stock",
     description: "Blast off! A mini rocket for your backpack zipper.",
   },
+  {
+  name: "Dog Flexi",
+    category: "Fidget",
+    price: 12,
+    image: "images/dog.svg",
+    colors: ["Red & White", "Blue & Silver"],
+    size: "About 12 in",
+    printTime: "2 hours",
+    status: "in-stock",
+    description: "Flex the dog in all possible angles.",
+  },
 ];
