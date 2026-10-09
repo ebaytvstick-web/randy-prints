@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Randy's Print Shop</title>
+  <meta name="description" content="Fun 3D-printed fidgets, keychains, animals and desk stuff made by a young maker.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#top" class="logo">
+      <img src="images/favicon.svg" alt="" width="36" height="36">
+      <span id="shop-name">Randy's Print Shop</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#shop">Shop</a>
+      <a href="#how">How It's Made</a>
+      <a href="#custom">Custom Ideas</a>
+      <a href="#order">Order</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="badge">🧒 Made by a kid maker</p>
+        <h1 id="tagline">Cool 3D-printed stuff, made by a kid maker!</h1>
+        <p class="lead">Hi! I'm Randy. I design and print fidgets, keychains, animals and desk stuff on my 3D printer. Every item is printed layer by layer, just for you.</p>
+        <div class="hero-buttons">
+          <a href="#shop" class="btn btn-primary">See the Shop</a>
+          <a href="#custom" class="btn btn-ghost">Have an idea?</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="images/printer.svg" alt="">
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop" class="section">
+      <h2>The Shop</h2>
+      <p class="section-sub">Tap an item to see colors and details.</p>
+      <div class="filters" role="group" aria-label="Filter by category"></div>
+      <div class="grid" id="product-grid"></div>
+    </section>
+
+    <!-- HOW IT'S MADE -->
+    <section id="how" class="section section-tint">
+      <h2>How It's Made</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Design</h3>
+          <p>I find or make a 3D model on the computer.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Slice</h3>
+          <p>Bambu Studio cuts the model into hundreds of thin layers.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Print</h3>
+          <p>The printer melts plastic and builds it one layer at a time.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>Check</h3>
+          <p>I clean it up and test it before it goes to you.</p>
+        </div>
+      </div>
+      <p class="fun-fact">💡 <strong>Fun fact:</strong> I print with PLA, a plastic made from plants like corn!</p>
+    </section>
+
+    <!-- CUSTOM -->
+    <section id="custom" class="section">
+      <div class="custom-box">
+        <div>
+          <h2>Got an idea? 💭</h2>
+          <p>Want your name on something, your team colors, or a totally new design? Tell me on the order form and I'll see if I can make it!</p>
+        </div>
+        <a href="#order" class="btn btn-primary">Ask for a custom print</a>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section id="order" class="section section-tint">
+      <h2>How to Order</h2>
+      <ol class="order-steps">
+        <li><strong>Ask a grown-up first.</strong> A parent needs to say it's OK.</li>
+        <li><strong>Fill out the order form</strong> with the item, color, and your first name only.</li>
+        <li><strong>We'll email your parent</strong> to confirm the price and when it'll be ready.</li>
+        <li><strong>Pick it up and pay</strong> in person. No credit cards on this site!</li>
+      </ol>
+      <div class="picked" id="picked" hidden>
+        You picked: <strong id="picked-item"></strong> — remember to put it on the form!
+      </div>
+      <div id="order-form-area"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <h2>Questions</h2>
+      <details>
+        <summary>How long does an order take?</summary>
+        <p>"In stock" items are usually ready in a few days. "Made to order" items take about a week.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>Payment happens in person between grown-ups. This website never asks for card numbers.</p>
+      </details>
+      <details>
+        <summary>Are the prints strong?</summary>
+        <p>Yes for normal play! But keep them out of hot cars and away from the dishwasher, because PLA can bend when it gets too hot.</p>
+      </details>
+      <details>
+        <summary>Are they safe for little kids?</summary>
+        <p>Some items are small and could be a choking hazard. They are not for kids under 3.</p>
+      </details>
+      <details>
+        <summary>Can I get a color that isn't listed?</summary>
+        <p>Maybe! Ask on the order form and I'll check what filament I have.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ❤️ and lots of plastic layers.</p>
+    <p class="small">Run by a young maker with help from his family. © <span id="year"></span> <span id="footer-name">Randy's Print Shop</span></p>
+  </footer>
+
+  <!-- Product detail popup -->
+  <dialog id="product-dialog" aria-labelledby="dlg-title">
+    <button class="dlg-close" aria-label="Close">✕</button>
+    <img id="dlg-img" src="" alt="">
+    <h3 id="dlg-title"></h3>
+    <p class="dlg-price" id="dlg-price"></p>
+    <p id="dlg-desc"></p>
+    <ul class="dlg-facts">
+      <li><strong>Colors:</strong> <span id="dlg-colors"></span></li>
+      <li><strong>Size:</strong> <span id="dlg-size"></span></li>
+      <li><strong>Print time:</strong> <span id="dlg-time"></span></li>
+    </ul>
+    <button class="btn btn-primary" id="dlg-order">I want this!</button>
+  </dialog>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
