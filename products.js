@@ -114,7 +114,7 @@ const PRODUCTS = [
     category: "Fidget",
     price: 12,
     image: "images/dog.svg",
-    colors: ["Red & White", "Blue & Silver"],
+    colors: ["Brown & Red & Black"],
     size: "About 12 in",
     printTime: "2 hours",
     status: "in-stock",
